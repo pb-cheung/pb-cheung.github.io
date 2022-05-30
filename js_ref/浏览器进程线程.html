@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>浏览器进程线程 | pb&#39;s blog</title>
+    <meta name="generator" content="VuePress 1.9.7">
+    
+    <meta name="description" content="Just playing around">
+    
+    <link rel="preload" href="/assets/css/0.styles.35bcedcf.css" as="style"><link rel="preload" href="/assets/js/app.a557e674.js" as="script"><link rel="preload" href="/assets/js/2.b71b6565.js" as="script"><link rel="preload" href="/assets/js/7.438833b0.js" as="script"><link rel="prefetch" href="/assets/js/10.b5cd0b18.js"><link rel="prefetch" href="/assets/js/11.b6dcc810.js"><link rel="prefetch" href="/assets/js/12.68009993.js"><link rel="prefetch" href="/assets/js/13.006d7b67.js"><link rel="prefetch" href="/assets/js/14.6f9070f4.js"><link rel="prefetch" href="/assets/js/3.01033ef6.js"><link rel="prefetch" href="/assets/js/4.e1d98a96.js"><link rel="prefetch" href="/assets/js/5.1063a0c9.js"><link rel="prefetch" href="/assets/js/6.b035f7dd.js"><link rel="prefetch" href="/assets/js/8.9f7d32ff.js"><link rel="prefetch" href="/assets/js/9.aa3502c0.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.35bcedcf.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container no-sidebar"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">pb's blog</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <!----></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><!---->  <!----> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="浏览器进程线程"><a href="#浏览器进程线程" class="header-anchor">#</a> 浏览器进程线程</h1> <h2 id="进程-process-和线程"><a href="#进程-process-和线程" class="header-anchor">#</a> 进程（Process）和线程</h2> <ol><li>进程是运行中的应用程序的一个封装。</li> <li>进程是资源（CPU、内存等）调度分配的最小单位。（Win和OSX的任务管理器打开，会看到以进程为划分单位的资源占用情况）</li> <li>线程是进程的子任务。</li> <li>线程是操作系统最小执行和调度单位。</li> <li>一个进程可以有多个线程，一个线程只能从属于一个进程。</li> <li>进程间通信通过 Inter Process Communication (IPC)机制。</li></ol> <p><img src="/assets/img/Process&amp;Thread.005d7fe1.png" alt="Process&amp;Thread"></p> <h2 id="浏览器架构"><a href="#浏览器架构" class="header-anchor">#</a> 浏览器架构</h2> <ol><li>以Chrome为代表的现代浏览器是多进程的架构（下图右侧）。</li> <li>每个浏览器tab对应一个渲染进程（Renderer Process）。</li> <li>多进程架构的优点有：其中某个tab未响应，其他tab页则不会受到影响。
+<img src="/assets/img/BrowserArchitecture.207ccb57.png" alt="谷歌浏览器多进程架构"></li></ol> <p>浏览器右上角三点——更多工具——任务管理器，可以查看当前浏览器共有多少进程。</p></div> <footer class="page-edit"><!----> <!----></footer> <!----> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.a557e674.js" defer></script><script src="/assets/js/2.b71b6565.js" defer></script><script src="/assets/js/7.438833b0.js" defer></script>
+  </body>
+</html>
