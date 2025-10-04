@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>滑动窗口 | pb&#39;s blog</title>
+    <meta name="generator" content="VuePress 1.9.7">
+    
+    <meta name="description" content="Just playing around">
+    
+    <link rel="preload" href="/assets/css/0.styles.64f7ac41.css" as="style"><link rel="preload" href="/assets/js/app.6adad53f.js" as="script"><link rel="preload" href="/assets/js/2.d771c900.js" as="script"><link rel="preload" href="/assets/js/50.d8d9d449.js" as="script"><link rel="prefetch" href="/assets/js/10.dcde2f5e.js"><link rel="prefetch" href="/assets/js/11.cff281d7.js"><link rel="prefetch" href="/assets/js/12.f73874c3.js"><link rel="prefetch" href="/assets/js/13.408827ee.js"><link rel="prefetch" href="/assets/js/14.c13eb0bf.js"><link rel="prefetch" href="/assets/js/15.aac1e0de.js"><link rel="prefetch" href="/assets/js/16.1ac13363.js"><link rel="prefetch" href="/assets/js/17.d7f38cf9.js"><link rel="prefetch" href="/assets/js/18.fecb3b89.js"><link rel="prefetch" href="/assets/js/19.6263e4b6.js"><link rel="prefetch" href="/assets/js/20.475ad2cf.js"><link rel="prefetch" href="/assets/js/21.ca24da62.js"><link rel="prefetch" href="/assets/js/22.7885ef4e.js"><link rel="prefetch" href="/assets/js/23.8cd8e281.js"><link rel="prefetch" href="/assets/js/24.8ce99c1e.js"><link rel="prefetch" href="/assets/js/25.d4df532e.js"><link rel="prefetch" href="/assets/js/26.94dd1d58.js"><link rel="prefetch" href="/assets/js/27.fc3dc632.js"><link rel="prefetch" href="/assets/js/28.17b0c1c7.js"><link rel="prefetch" href="/assets/js/29.2bd08fe5.js"><link rel="prefetch" href="/assets/js/3.5e967577.js"><link rel="prefetch" href="/assets/js/30.5deab225.js"><link rel="prefetch" href="/assets/js/31.57cc0a2f.js"><link rel="prefetch" href="/assets/js/32.bbc7fa3f.js"><link rel="prefetch" href="/assets/js/33.e3181517.js"><link rel="prefetch" href="/assets/js/34.c283b275.js"><link rel="prefetch" href="/assets/js/35.c442fc47.js"><link rel="prefetch" href="/assets/js/36.1d4ee7e7.js"><link rel="prefetch" href="/assets/js/37.abedfcc0.js"><link rel="prefetch" href="/assets/js/38.e1bcb9b4.js"><link rel="prefetch" href="/assets/js/39.ee95046d.js"><link rel="prefetch" href="/assets/js/4.42e55058.js"><link rel="prefetch" href="/assets/js/40.cf50a7de.js"><link rel="prefetch" href="/assets/js/41.fe3c2ab8.js"><link rel="prefetch" href="/assets/js/42.7150dbb2.js"><link rel="prefetch" href="/assets/js/43.200a80ea.js"><link rel="prefetch" href="/assets/js/44.4103f9fc.js"><link rel="prefetch" href="/assets/js/45.93188eba.js"><link rel="prefetch" href="/assets/js/46.1364e4fb.js"><link rel="prefetch" href="/assets/js/47.672cb232.js"><link rel="prefetch" href="/assets/js/48.36ee6e48.js"><link rel="prefetch" href="/assets/js/49.6c80d33c.js"><link rel="prefetch" href="/assets/js/5.75bf1593.js"><link rel="prefetch" href="/assets/js/51.dff07c80.js"><link rel="prefetch" href="/assets/js/52.86cec1ee.js"><link rel="prefetch" href="/assets/js/53.012b7309.js"><link rel="prefetch" href="/assets/js/54.54c5d024.js"><link rel="prefetch" href="/assets/js/55.38e297b3.js"><link rel="prefetch" href="/assets/js/56.d359a5da.js"><link rel="prefetch" href="/assets/js/57.46464366.js"><link rel="prefetch" href="/assets/js/58.d9cd1646.js"><link rel="prefetch" href="/assets/js/59.6558ee37.js"><link rel="prefetch" href="/assets/js/6.6592b8e9.js"><link rel="prefetch" href="/assets/js/60.5885e73b.js"><link rel="prefetch" href="/assets/js/61.72117488.js"><link rel="prefetch" href="/assets/js/62.dd0d9886.js"><link rel="prefetch" href="/assets/js/63.09e70e26.js"><link rel="prefetch" href="/assets/js/64.ffb070c4.js"><link rel="prefetch" href="/assets/js/65.39ab6c41.js"><link rel="prefetch" href="/assets/js/66.f519c6c9.js"><link rel="prefetch" href="/assets/js/67.fe09efe2.js"><link rel="prefetch" href="/assets/js/68.87fcd61c.js"><link rel="prefetch" href="/assets/js/69.9fe94e2c.js"><link rel="prefetch" href="/assets/js/7.0d15b0ac.js"><link rel="prefetch" href="/assets/js/70.a2dd26a6.js"><link rel="prefetch" href="/assets/js/71.45df84f5.js"><link rel="prefetch" href="/assets/js/72.57a9b07e.js"><link rel="prefetch" href="/assets/js/73.1e1c769b.js"><link rel="prefetch" href="/assets/js/74.5e95132b.js"><link rel="prefetch" href="/assets/js/75.873e3f1a.js"><link rel="prefetch" href="/assets/js/76.60c9b187.js"><link rel="prefetch" href="/assets/js/77.e46b2efc.js"><link rel="prefetch" href="/assets/js/78.e392cfd2.js"><link rel="prefetch" href="/assets/js/79.5683df7b.js"><link rel="prefetch" href="/assets/js/8.edffb30a.js"><link rel="prefetch" href="/assets/js/80.5110ea04.js"><link rel="prefetch" href="/assets/js/81.d30dc885.js"><link rel="prefetch" href="/assets/js/82.08ff2739.js"><link rel="prefetch" href="/assets/js/83.1b780844.js"><link rel="prefetch" href="/assets/js/84.660c535c.js"><link rel="prefetch" href="/assets/js/85.a8a22ed3.js"><link rel="prefetch" href="/assets/js/86.25b5de01.js"><link rel="prefetch" href="/assets/js/87.639800f4.js"><link rel="prefetch" href="/assets/js/88.09031d68.js"><link rel="prefetch" href="/assets/js/89.37e4788b.js"><link rel="prefetch" href="/assets/js/9.8503bb9a.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.64f7ac41.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">pb's blog</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/js-ref/new操作符.html" class="nav-link">
+  深入理解JS
+</a></div><div class="nav-item"><a href="/coding/coding.html" class="nav-link">
+  编码
+</a></div><div class="nav-item"><a href="/interview/http.html" class="nav-link">
+  前端面试
+</a></div><div class="nav-item"><a href="/vue/questions.html" class="nav-link">
+  Vue.js
+</a></div><div class="nav-item"><a href="/algorithm/dichotomy.html" class="nav-link">
+  算法
+</a></div><div class="nav-item"><a href="/style/sass.html" class="nav-link">
+  布局
+</a></div><div class="nav-item"><a href="/nodejs/nodejs内存管理.html" class="nav-link">
+  nodejs
+</a></div><div class="nav-item"><a href="/ai/llm.html" class="nav-link">
+  AI
+</a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/js-ref/new操作符.html" class="nav-link">
+  深入理解JS
+</a></div><div class="nav-item"><a href="/coding/coding.html" class="nav-link">
+  编码
+</a></div><div class="nav-item"><a href="/interview/http.html" class="nav-link">
+  前端面试
+</a></div><div class="nav-item"><a href="/vue/questions.html" class="nav-link">
+  Vue.js
+</a></div><div class="nav-item"><a href="/algorithm/dichotomy.html" class="nav-link">
+  算法
+</a></div><div class="nav-item"><a href="/style/sass.html" class="nav-link">
+  布局
+</a></div><div class="nav-item"><a href="/nodejs/nodejs内存管理.html" class="nav-link">
+  nodejs
+</a></div><div class="nav-item"><a href="/ai/llm.html" class="nav-link">
+  AI
+</a></div> <!----></nav>  <ul class="sidebar-links"><li><a href="/" aria-current="page" class="sidebar-link">首页</a></li><li><a href="/algorithm/sort.html" class="sidebar-link">排序算法</a></li><li><a href="/algorithm/string.html" class="sidebar-link">字符串</a></li><li><a href="/algorithm/linked-list.html" class="sidebar-link">链表</a></li><li><a href="/algorithm/binary-tree.html" class="sidebar-link">二叉树</a></li><li><a href="/algorithm/dichotomy.html" class="sidebar-link">二分查找</a></li><li><a href="/algorithm/remove-element.html" class="sidebar-link">移除元素</a></li><li><a href="/algorithm/sliding-window.html" aria-current="page" class="active sidebar-link">滑动窗口</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/algorithm/sliding-window.html#一、题目" class="sidebar-link">一、题目</a></li><li class="sidebar-sub-header"><a href="/algorithm/sliding-window.html#二、暴力解法" class="sidebar-link">二、暴力解法</a></li><li class="sidebar-sub-header"><a href="/algorithm/sliding-window.html#三、滑动窗口解法" class="sidebar-link">三、滑动窗口解法</a></li></ul></li><li><a href="/algorithm/remove.html" class="sidebar-link">移除元素</a></li><li><a href="/algorithm/hash-table.html" class="sidebar-link">哈希表</a></li><li><a href="/algorithm/greedy.html" class="sidebar-link">贪心算法</a></li><li><a href="/algorithm/double-pointer.html" class="sidebar-link">双指针</a></li><li><a href="/algorithm/dynamic-programming.html" class="sidebar-link">动态规划</a></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="滑动窗口"><a href="#滑动窗口" class="header-anchor">#</a> 滑动窗口</h1> <p>sliding window</p> <h2 id="一、题目"><a href="#一、题目" class="header-anchor">#</a> 一、题目</h2> <p><a href="https://leetcode.cn/problems/minimum-size-subarray-sum/description/" target="_blank" rel="noopener noreferrer">力扣 209 长度最小的子数组<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p> <blockquote><p>给定一个含有 n 个正整数的数组和一个正整数 target 。<br>
+找出该数组中满足其总和大于等于 target 的长度最小的 连续子数组 [numsl, numsl+1, ..., numsr-1, numsr] ，并返回其长度。如果不存在符合条件的子数组，返回 0 。<br>
+示例 1：<br>
+输入：target = 7, nums = [2,3,1,2,4,3]<br>
+输出：2<br>
+解释：子数组 [4,3] 是该条件下的长度最小的子数组。<br>
+示例 2：<br>
+输入：target = 4, nums = [1,4,4]<br>
+输出：1<br>
+示例 3：<br>
+输入：target = 11, nums = [1,1,1,1,1,1,1,1]<br>
+输出：0<br></p></blockquote> <h2 id="二、暴力解法"><a href="#二、暴力解法" class="header-anchor">#</a> 二、暴力解法</h2> <ul><li>双重循环，外层循环控制开始元素，内层为结束元素，遍历获得满足条件的所有子数组，取其中值最小的</li> <li>时间复杂度O(n²)</li></ul> <h2 id="三、滑动窗口解法"><a href="#三、滑动窗口解法" class="header-anchor">#</a> 三、滑动窗口解法</h2> <ul><li>滑动窗口，一层循环，让窗口能“滑动”起来。时间复杂度O(n)</li> <li><strong>关键点</strong>：循环索引值是窗口起始还是结束位置，应该是结束位置</li> <li>循环开始，窗口扩大新增一个元素，就累加获取和
+<ul><li>和大于等于目标值时，就得到了一个可能满足条件的子数组，将其长度与现有长度作对比，取小的值</li> <li>我们的目的是找到符合条件且最短的子数组，此时需要移动窗口左边界，缩小窗口。又一个<strong>关键点</strong>，左边界移动一次后的窗口内的所有元素还是符合条件的，此时需要继续移动左边界，因此，上一个小点的条件判断应该用<code>while</code>而不是<code>if</code></li></ul></li></ul> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token comment">/**
+ * @param {number} target
+ * @param {number[]} nums
+ * @return {number}
+ */</span>
+<span class="token keyword">var</span> <span class="token function-variable function">minSubArrayLen</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">target<span class="token punctuation">,</span> nums</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> len <span class="token operator">=</span> nums<span class="token punctuation">.</span>length<span class="token punctuation">;</span>
+    <span class="token keyword">let</span> pLeft <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+    <span class="token keyword">let</span> sum <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+    <span class="token keyword">let</span> result <span class="token operator">=</span> len <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">;</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> pRight <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> pRight <span class="token operator">&lt;</span> len<span class="token punctuation">;</span> pRight <span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        sum <span class="token operator">+=</span> nums<span class="token punctuation">[</span>pRight<span class="token punctuation">]</span><span class="token punctuation">;</span>
+        <span class="token keyword">while</span> <span class="token punctuation">(</span>sum <span class="token operator">&gt;=</span> target<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">const</span> subLen <span class="token operator">=</span> pRight <span class="token operator">-</span> pLeft <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">;</span>
+            result <span class="token operator">=</span> Math<span class="token punctuation">.</span><span class="token function">min</span><span class="token punctuation">(</span>result<span class="token punctuation">,</span> subLen<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token comment">// 移动左边界</span>
+            sum <span class="token operator">-=</span> nums<span class="token punctuation">[</span>pLeft<span class="token punctuation">]</span><span class="token punctuation">;</span>
+            pLeft <span class="token operator">++</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>result <span class="token operator">===</span> len <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> result<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre></div></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/algorithm/remove-element.html" class="prev">
+        移除元素
+      </a></span> <span class="next"><a href="/algorithm/remove.html">
+        移除元素
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.6adad53f.js" defer></script><script src="/assets/js/2.d771c900.js" defer></script><script src="/assets/js/50.d8d9d449.js" defer></script>
+  </body>
+</html>
